@@ -1,4 +1,4 @@
 {
   "mongoURI": "mongodb+srv://sihle:MongoDB01@cluster0.ypeol.mongodb.net/url_shorten?retryWrites=true&w=majority",
-  "baseUrl": "localhost:5000"
+  "baseUrl": "http://localhost:5000"
 }

@@ -2,10 +2,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const config = require("config");
-const routerUrl = require("./routes/urlRoutes");
-const routerIndex = require("./routes");
 
-// our server
+//express routes
+const urlRouter = require("./routes/urlRoutes");
+const indexRouter = require("./routes");
+
 const app = express();
 
 // PORT
@@ -30,5 +31,7 @@ mongoose
 
 //Middleware
 app.use(express.json({ extended: false }));
-app.use("/url_shorten", routerUrl);
-app.use("/index", routerIndex);
+
+// handing express routes
+app.use("/api/url", urlRouter);
+app.use("/", indexRouter);
