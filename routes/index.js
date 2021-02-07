@@ -2,7 +2,6 @@
 const express = require("express");
 
 const Url = require("../models/Url");
-const { route } = require("./urlRoutes");
 const router = express.Router();
 
 // @route     GET/:code

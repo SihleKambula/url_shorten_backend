@@ -2,7 +2,6 @@
 const express = require("express");
 const validUrl = require("valid-url");
 const shortId = require("shortid");
-const config = require("config");
 
 const Url = require("../models/Url");
 const router = express.Router();
@@ -14,7 +13,7 @@ const router = express.Router();
 
 router.post("/shorten", async (req, res) => {
   const { longUrl } = req.body;
-  const baseUrl = config.get("baseUrl");
+  const baseUrl = "http://localhost:5000"; // your domain name is your base name
 
   // check base url
   if (!validUrl.isUri(baseUrl)) {

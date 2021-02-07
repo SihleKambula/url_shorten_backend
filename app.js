@@ -1,7 +1,7 @@
 // Requirements
 const express = require("express");
 const mongoose = require("mongoose");
-const config = require("config");
+require("dotenv/config");
 
 //express routes
 const urlRouter = require("./routes/urlRoutes");
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 //connect to DB
 mongoose
-  .connect(config.get("mongoURI"), {
+  .connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
