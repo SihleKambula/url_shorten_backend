@@ -1,12 +1,18 @@
 // Requirements
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv/config");
 
 //express routes
 const urlRouter = require("./routes/urlRoutes");
 const indexRouter = require("./routes");
 
+// CORS options
+const corsOptions = {
+  origin: "heroku app",
+  optionsSuccessStatus: 200,
+};
 const app = express();
 
 // PORT
@@ -31,6 +37,7 @@ mongoose
 
 //Middleware
 app.use(express.json({ extended: false }));
+app.use(cors(corsOptions));
 
 // handing express routes
 app.use("/api/url", urlRouter);
