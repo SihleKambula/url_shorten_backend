@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.post("/shorten", async (req, res) => {
   const { longUrl } = req.body;
-  const baseUrl = "https://ln-k.herokuapp.com/"; // your domain name is your base name
+  const baseUrl = "https://ln-k.herokuapp.com"; // your domain name is your base name
 
   // check base url
   if (!validUrl.isUri(baseUrl)) {
