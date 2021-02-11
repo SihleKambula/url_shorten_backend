@@ -13,6 +13,7 @@ const corsOptions = {
   origin: "heroku app",
   optionsSuccessStatus: 200,
 };
+
 const app = express();
 
 // PORT
@@ -37,7 +38,7 @@ mongoose
 
 //Middleware
 app.use(express.json({ extended: false }));
-app.use(cors(corsOptions));
+app.use(cors());
 
 // handing express routes
 app.use("/api/url", urlRouter);
