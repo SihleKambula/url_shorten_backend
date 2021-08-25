@@ -10,15 +10,14 @@ const indexRouter = require("./routes");
 
 // CORS options
 const corsOptions = {
-  origin: "heroku app",
-  optionsSuccessStatus: 200,
+  origin: "https://lil-link.vercel.app/",
 };
 
 const app = express();
 
 //Middleware
 app.use(express.json({ extended: false }));
-app.use(cors());
+app.use(cors(corsOptions));
 
 // PORT
 const PORT = process.env.PORT || 5000;
