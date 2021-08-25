@@ -16,6 +16,10 @@ const corsOptions = {
 
 const app = express();
 
+//Middleware
+app.use(express.json({ extended: false }));
+app.use(cors());
+
 // PORT
 const PORT = process.env.PORT || 5000;
 
@@ -36,9 +40,7 @@ mongoose
     process.exit(1);
   });
 
-//Middleware
-app.use(express.json({ extended: false }));
-app.use(cors());
+
 
 // handing express routes
 app.use("/api/url", urlRouter);
