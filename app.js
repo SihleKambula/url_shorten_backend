@@ -33,7 +33,7 @@ mongoose
 
 //Middleware
 app.use(express.json({ extended: false }));
-app.use(cors({origin:"https://lil-link.vercel.app"}));
+app.use(cors());
 
 // handing express routes
 app.use("/api/url", urlRouter);
